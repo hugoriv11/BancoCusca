@@ -26,7 +26,7 @@ public class Cajero {
     
     public void procesarTransaccion(Cliente cliente, long timeStamp) {
 
-		System.out.println("El cajera " + this.nombre + 
+		System.out.println("El cajero " + this.nombre + 
 				" COMIENZA A PROCESAR LA TRANSSACCION DEL CLIENTE " + cliente.getNombre() + 
 				" EN EL TIEMPO: " + (System.currentTimeMillis() - timeStamp) / 1000	+
 				"seg");
