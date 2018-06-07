@@ -9,15 +9,22 @@ package banco;
 
 public class Main {
     public static void main(String []args){
-        Cliente cliente1 = new Cliente("Hugo", new int[]{2,4,6,8,9});
-        Cliente cliente2 = new Cliente("Steven", new int[]{1,3,5,7,9});
-     
-        Cajero cajero1 = new Cajero("Victor");
-        Cajero cajero2 = new Cajero("Victor^2");
-        
+        Cliente cliente1 = new Cliente("Rolando", new int[] { 2, 2, 1, 5, 2, 3 });
+        Cliente cliente2 = new Cliente("Alex", new int[] { 1, 3, 5, 1, 1 });
+        Cliente cliente3 = new Cliente("Ernesto", new int[] { 2, 2, 2, 1, 1, 1 });
+        Cliente cliente4 = new Cliente("Alexander", new int[] { 1, 8, 3, 3, 5 });
+
+        // Tiempo inicial de referencia
         long initialTime = System.currentTimeMillis();
         
-        cajero1.procesarTransaccion(cliente1, initialTime);
-        cajero2.procesarTransaccion(cliente2, initialTime);
+        Cajero cajero1 = new Cajero("Hugo", cliente1, initialTime);
+        Cajero cajero2 = new Cajero("Ruben", cliente2, initialTime);
+        Cajero cajero3 = new Cajero("Victor", cliente3, initialTime);
+        Cajero cajero4 = new Cajero("Steven", cliente4, initialTime);
+
+        cajero1.start();
+        cajero2.start();
+        cajero3.start();
+        cajero4.start();
     }
 }
